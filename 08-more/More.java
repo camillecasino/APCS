@@ -22,3 +22,12 @@ public class More {
 }
 	  
 	
+public String stringSplosion(String str) {
+  String n = "";
+  int i = 0;
+  while (i < str.length()) {
+    n = n + str.substring(0,i + 1);
+    i++;
+    }
+  return n;
+}
