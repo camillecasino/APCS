@@ -1,1 +1,4 @@
-public class Warrior extends Character {
+// subclass of BaseChar
+
+public class Warrior extends BaseChar {
+}
