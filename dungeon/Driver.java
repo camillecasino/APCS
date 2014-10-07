@@ -1,6 +1,6 @@
 public class Driver {
     public static void main(String[] args) {
-	Character c = new Character();
+	BaseChar c = new BaseChar();
 	
 	System.out.println(c.getHealth());
 
