@@ -3,7 +3,12 @@
 public class Basechar {
     private int health = 20;
     private String name;
-    
+    /*
+    public Basechar() {
+	setName("Cleon");
+    }
+    */
+
     public String toString() {
 	return this.getName();
     }
@@ -13,9 +18,12 @@ public class Basechar {
 	System.out.println(this + " is attacking " + other);
     }
 
-    public void setName(String name) {
+
+    
+     public void setName(String name) {
 	this.name = name;
     }
+    
 
     //this. refers to the instance of the class you are using
 
