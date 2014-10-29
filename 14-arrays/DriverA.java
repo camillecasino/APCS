@@ -31,9 +31,13 @@ public class DriverA {
 	public boolean more14(int[] nums) {
 	    int numones = 0;
 	    int numfours = 0;
-	    for (int i = 0; i < nums.length; i++){
-		if (nums[i] == 1) {numones++;}
-		if (nums[i] == 4) {numfours++;}
+	    for (int i = 0; i < nums.length; i++) {
+		if (nums[i] == 1) {
+		    numones++;
+		}
+		if (nums[i] == 4) {
+		    numfours++;
+		}
 	    }
 	    return (numones > numfours);
 	}
@@ -56,6 +60,25 @@ public class DriverA {
 		}
 	    }
 	    return nums;
+	}
+
+	public boolean tripleUp(int[] nums) {
+	    int u = 0;
+	    if (nums.length < 3) {
+		return false;
+	    }
+	    for (int i = 0; i < nums.length; i++) {
+		u = nums[i];
+		if (u + 1 == nums[i + 1]) {
+		    if (u + 2 == nums[i + 2]) {
+			return true;
+		    }
+		    else {
+			return false;
+		    }
+		}
+	    }
+	    return false;
 	}
 
 
