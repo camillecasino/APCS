@@ -46,5 +46,64 @@ public class WordSearch {
 	}
     }
 
+    public void addWordVD(String w,int row, int col){
+	int r = row, c = col;
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r++;
+	}
+	r = row;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+		r++;
+	    }
+	}
+	
+    }
+
+
+    public void addWordVU(String w,int row, int col){
+	String newWord = new StringBuffer(w).reverse().toString();
+	w = newWord;
+
+	int r = row, c = col;
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r++;
+	}
+	r = row;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+		r++;
+	    }
+	}
+
     
+    }
 }
