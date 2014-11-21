@@ -25,27 +25,65 @@ public class WordSearch {
 	return s;
     }
 
-    public void addWordH(String w,int row, int col){
-        boolean write = (col <= 15);
+     public void addWordHF(String w,int row, int col){
 	int r = row, c = col;
-	for (int i=0;i<w.length();i++){
-	    if (!(board[r][c] == '.' || board[r][c] == w.charAt(i))) {
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
 		write = false;
 	    }
 	    c++;
-	    if (c >= col) {
-		write = false;
-	    }
 	}
 	c = col;
-	if (write) {
-	    for (int i = 0; i < w.length(); i++) {
+	if (write){
+	    for (int i=0;i<w.length();i++){
 		board[r][c] = w.charAt(i);
 		c++;
 	    }
 	}
+	
     }
 
+    public void addWordHB(String w,int row, int col){
+	String newWord = new StringBuffer(w).reverse().toString();
+	w = newWord;
+
+	int r = row, c = col;
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    c++;
+	}
+	c = col;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+		c++;
+	    }
+	}
+	
+    }
+    
     public void addWordVD(String w,int row, int col){
 	int r = row, c = col;
 	boolean write = true;
@@ -103,7 +141,105 @@ public class WordSearch {
 		r++;
 	    }
 	}
-
-    
     }
+
+    public void addWordDRD(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	boolean write = true;
+
+	for (int i = 0; i < w.length(); i++) {
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r++;
+	    c++;
+	}
+	
+	r = row;
+	c = col;
+	if (write) {
+	    for (int i = 0; i < w.length(); i++) {
+		board[r][c] = w.charAt(i);
+		r++;
+		c++;
+	    }
+	}
+    }
+
+     public void addWordDLD(String w, int row, int col) {
+	String newWord = new StringBuffer(w).reverse().toString();
+	w = newWord;
+	int r = row;
+	int c = col;
+	boolean write = true;
+
+	for (int i = 0; i < w.length(); i++) {
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r++;
+	    c++;
+	}
+	
+	r = row;
+	c = col;
+	if (write) {
+	    for (int i = 0; i < w.length(); i++) {
+		board[r][c] = w.charAt(i);
+		r++;
+		c++;
+	    }
+	}
+    }
+
+     public void addWordDUR(String w, int row, int col) {
+	int r = row;
+	int c = col;
+	boolean write = true;
+
+	for (int i = 0; i < w.length(); i++) {
+	    if (c < 0){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r--;
+	    c++;
+	}
+	
+	r = row;
+	c = col;
+	if (write) {
+	    for (int i = 0; i < w.length(); i++) {
+		board[r][c] = w.charAt(i);
+		r--;
+		c++;
+	    }
+	}
+    }
+    
 }
+
