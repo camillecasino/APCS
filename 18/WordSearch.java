@@ -405,14 +405,13 @@ public class WordSearch {
 
     // this accessory method is just here to fill the board
     // with letters just as a regular word search looks.
-    public void fillBoard(int row, int col) {
+    public void fillBoard() {
 	Random rn = new Random();
-	int r = row, c = col;
-	String s = "abcdefghijklmnopqrstuvwxyz";
+	String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
 		// generate a random integer out of a set of 26
-		int let = rn.nextInt(25);
+		int let = rn.nextInt(26);
 		// this is basically the same way we filled the array
 		// in the beginning, except instead of dots, it's
 		// random letters/characters. the first statement
