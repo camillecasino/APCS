@@ -4,10 +4,24 @@ import java.util.*;
 public class WordSearch {
 
     private char[][] board;
+    private ArrayList<String> words;
+    private Random rnd;
     
     /* constructors to set up the board */
 
     public WordSearch(int r, int c) {
+	rnd = new Random();
+	words = new ArrayList<String>();
+
+	Scanner sc = null;
+
+	try {
+	    sc = new Scanner(new File("words.txt"));
+	} catch (Exception e) {
+	    System.out.println("Can't open wordlist");
+	    System.exit(0);
+	}
+	    
 	board = new char[r][c];
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
@@ -15,10 +29,25 @@ public class WordSearch {
 	    }
 	}
     }
+    
     public WordSearch() {
 	this(21, 45);
     }
 
+    public void buildPuzzle(int numwords) {
+	//	wordBank = new ArrayList<String>();
+	for (int i = 0; i < numwords; i++) {
+	//while (numwords > 0) {
+	    int wordIndex = rnd.nextInt(words.size());
+	    String word = words.get(wordIndex);
+	    addWord(word);
+	    //  if (addWord(word)) {
+	    //	numwords--;
+	    // }
+	}
+    }
+
+    
     /* the lovely toString(), as usual */
 
     public String toString() {
