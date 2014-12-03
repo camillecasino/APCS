@@ -112,4 +112,24 @@ public class Sarray{
     	data = newArray;
     	return f;
     }
+
+
+    public void isort() {
+	String n = "";
+	for (int j = 0; j < data.length; j++) {
+	    n = data[j];
+	    int i;
+	    for (i = last; i > 0 && n.compareTo(data[i - 1]) < 0; i++) {
+		data[i] = data[i - 1];
+	    }
+	    data[i] = n;
+	}
+    }
+
+    public static void main(String[] args) {
+	Sarray s = new Sarray();
+	System.out.println(s);
+	s.isort();
+	System.out.println(s);
+    }
 }
