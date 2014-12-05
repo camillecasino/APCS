@@ -154,15 +154,17 @@ public class Sarray {
 	String n;
 	String m;
 	for (int i = 0; i < data.length - 1; i++) {
-	    if (data[i].compareTo(data[i + 1]) > 0) {
-		n = data[i];
-		m = data[i + 1];
-		data[i + 1] = n;
-		data[i] = m;
-	    }
+		if (data[i].compareTo(data[i + 1]) > 0) {
+		    n = data[i];
+		    m = data[i + 1];
+		    data[i + 1] = n;
+		    data[i] = m;
+		}
+	    
 	}
     }
 
+    
 		
      
     public static void main(String[] args) {
@@ -179,8 +181,12 @@ public class Sarray {
 	s.add("volleyball");
 	s.add("ultimate");
 	//s.ssort();
+	//s.bsort();
+	System.out.println(s);
 	s.bsort();
 	System.out.println(s);
     }
     
 }
+
+
