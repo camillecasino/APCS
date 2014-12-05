@@ -131,18 +131,39 @@ public class Sarray {
 	}
     }
 
+    // SELECTION SORT
     public void ssort() {
 	String n;
-	for (int i = data.length - 1; i > 0; i--) {
-	    String max = data[i];
-	    for (int j = 0; j < data.length - i; j++) {
-		if (data[j].compareTo(data[i]) > 0) {
-		    max = data[j];
-		}
+	for (int i = 0; i < data.length; i++) {
+	    int minInd = i;
+	    for (int j = i; j < data.length; j++) {
+		if (data[j].compareTo(data[i]) < 0) {
+		    minInd = j;
+		} //else {
+		//    minInd = data[i];
+		//}
 	    }
-	    data[i] = max;
+	    n = data[minInd];
+	    data[minInd] = data[i];
+	    data[i] = n;
 	}
     }
+
+    // BUBBLE SORT
+    public void bsort() {
+	String n;
+	String m;
+	for (int i = 0; i < data.length - 1; i++) {
+	    if (data[i].compareTo(data[i + 1]) > 0) {
+		n = data[i];
+		m = data[i + 1];
+		data[i + 1] = n;
+		data[i] = m;
+	    }
+	}
+    }
+
+		
      
     public static void main(String[] args) {
 	Sarray s = new Sarray();
@@ -157,7 +178,8 @@ public class Sarray {
 	s.add("stuy");
 	s.add("volleyball");
 	s.add("ultimate");
-	s.ssort();
+	//s.ssort();
+	s.bsort();
 	System.out.println(s);
     }
     
