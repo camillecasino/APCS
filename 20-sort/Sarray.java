@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class Sarray {
     
     //worked with Leon on Friday
@@ -121,13 +124,13 @@ public class Sarray {
 
     public void isort() {
 	String n;
-	for (int j = 0; j < data.length; j++) {
+	for (int j = 0; j < data.length - 1; j++) {
 	    n = data[j];
 	    int i;
-	    for (i = last; i > 0 && n.compareTo(data[i - 1]) < 0; i++) {
+	    for (i = last; i >= 0 && n.compareTo(data[i - 1]) < 0; i++) {
 		data[i] = data[i - 1];
 	    }
-	    data[i] = n;
+	    data[i - 1] = n;
 	}
     }
 
@@ -164,7 +167,10 @@ public class Sarray {
 	}
     }
 
-    
+    // CODE TO FOR COMPARISON (JAVA'S BUILT-IN SORT METHOD)
+    public void jsort() {
+	Arrays.sort(data);
+    }
 		
      
     public static void main(String[] args) {
@@ -183,7 +189,8 @@ public class Sarray {
 	//s.ssort();
 	//s.bsort();
 	System.out.println(s);
-	s.bsort();
+	//s.isort();
+	//s.jsort();
 	System.out.println(s);
     }
     
