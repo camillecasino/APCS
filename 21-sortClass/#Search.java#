@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Search {
+
+    public Comparable lsearch(Comparable[] a, Comparable s) {
+	for (int i = 0; i < a.length; i++) {
+	    if (a[i].equals(s)) {
+		return s;
+	    }
+	}
+	return "The item you are looking for is not here.";
+    }
+
+    public static void main(String[] args) {
+	new Comparable[] c = {"a", "b", "c", "d", "e"};
+	System.out.println(lsearch(c, "d"));
+    }
+}

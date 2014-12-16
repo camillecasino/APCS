@@ -1,0 +1,10 @@
+public class Ar {
+    public static void main(String[] args) {
+	Random number = new Random();
+	int rng = number.nextInt(75) + 75;
+	int[] ranArray;
+	for (i = 0; i < 100; i++) {
+	    ranArray[i] = rng;
+	}
+    }
+}

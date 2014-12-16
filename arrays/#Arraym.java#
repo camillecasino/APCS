@@ -1,0 +1,6 @@
+import java.util.*;
+
+public class Arraym {
+
+    public int maxVal() {
+	

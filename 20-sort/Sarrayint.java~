@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Sarrayint {
+
+    int[] data;
+    int last;
+
+    public String toString {
+	String f = "";
+	for (int a = 0; a < data.length; a++) {
+    	    f = f + data[a]+", ";
+	}
+	f = f + "\n";
+	int count = -1;
+	for (int a = 0; a < data.length; a++) {
+	    if (data[a]!=0){
+		count = a;
+	    }
+	}
+	last = count;	
+	f = f + "last: "+last;
+	f = f + "\n";
+	return f;
+    }

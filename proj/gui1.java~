@@ -1,0 +1,9 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class gui1 extends JFrame {
+    public static void main(String[] args) {
+	gui1 f = new gui1();
+	f.setVisible(true);
+    }
+}
